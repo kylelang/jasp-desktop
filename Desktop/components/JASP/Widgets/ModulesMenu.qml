@@ -214,12 +214,29 @@ FocusScope
 					anchors.left:		parent.left
 					onClicked: 			folderSelected ? dynamicModules.installJASPDeveloperModule() : preferencesModel.browseDeveloperFolder()
 					toolTip:			folderSelected ? (dynamicModules.developersModuleInstallButtonEnabled ? qsTr("Install selected developer module") : qsTr("Installing developer module now")) : qsTr("Select a developer module by clicking here")
-					visible:			preferencesModel.developerMode
+					visible:			preferencesModel.developerMode && !preferencesModel.directLibpathEnabled
 					enabled:			dynamicModules.developersModuleInstallButtonEnabled
 					focus:				currentIndex === -1
 					activeFocusOnTab:	false
 
 					readonly property bool folderSelected: preferencesModel.developerFolder != ""
+				}
+				
+				MenuButton
+				{
+					id:					addDeveloperModuleDirectButton
+					text:				moduleSelected ? qsTr("Install Developer Module") : qsTr("Select a Developer Module")
+					width:				modules.buttonWidth
+					height:				modules.buttonHeight
+					anchors.leftMargin: modules.buttonMargin
+					anchors.left:		parent.left
+					onClicked: 			moduleSelected ? dynamicModules.installJASPDeveloperModule() : fileMenuModel.showAdvancedPreferences()
+					toolTip:			moduleSelected ? qsTr("Install selected developer module") : qsTr("Select a developer module by filling in the relevant preferences")
+					visible:			preferencesModel.developerMode && preferencesModel.directLibpathEnabled
+					focus:				currentIndex === -1
+					activeFocusOnTab:	false
+
+					readonly property bool moduleSelected: preferencesModel.directLibpathEnabled && preferencesModel.directLibpathFolder != "" && preferencesModel.directDevModName != ""
 				}
 
 				QTC.ToolSeparator
@@ -265,10 +282,27 @@ FocusScope
 							anchors
 							{
 								left			: parent.left
-								right			: minusButton.left
+                                right			: refreshButton.left
 								verticalCenter	: parent.verticalCenter
 							}
 						}
+
+
+                        MenuButton
+                        {
+                            z:				1
+                            id:				refreshButton
+                            visible:		!isBundled && !isSpecial
+                            iconSource:		jaspTheme.iconPath + "/redo.svg"
+                            width:			visible ? height : 0
+                            onClicked:		dynamicModules.refreshDeveloperModule();
+                            toolTip:		qsTr("Refresh developer module ") + displayText
+                            anchors
+                            {
+                                right			: minusButton.left
+                                verticalCenter	: parent.verticalCenter
+                            }
+                        }
 
 						MenuButton
 						{

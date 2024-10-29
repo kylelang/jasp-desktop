@@ -95,7 +95,10 @@ const Settings::Setting Settings::Values[] = {
 	{"checkUpdatesLastTime",		-1		},
 	{"maxScaleLevels",				100		},
 	{"pdfLandscape",				false	},
-	{"pdfPageSize",					int(pdfPageSize::A4)			}
+	{"pdfPageSize",					int(pdfPageSize::A4)			},
+	{"directLibpathEnabled",		true	},
+	{"directLibpathFolder",			""		},
+	{"directDevModName",			""		}
 	
 };	
 
