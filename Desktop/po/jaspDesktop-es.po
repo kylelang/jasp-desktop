@@ -644,16 +644,8 @@ msgstr ""
 "Activar esta opción hace que JASP recuerde qué Módulos estaban habilitados."
 
 msgctxt "PrefsAdvanced|"
-msgid "Developer mode (Beta version)"
-msgstr "Modo de desarrollador (versión Beta)"
-
-msgctxt "PrefsAdvanced|"
 msgid "To use JASP Modules enable this option."
 msgstr "Habilitar esta opción para utilizar los Módulos de JASP."
-
-msgctxt "PrefsAdvanced|"
-msgid "Select developer folder"
-msgstr "Seleccionar la carpeta de desarrollador"
 
 msgctxt "PrefsAdvanced|"
 msgid "Browse to your JASP Module folder."
@@ -5578,3 +5570,49 @@ msgid ""
 msgstr ""
 "El número máximo de valores numéricos es %1. La variable %2 tiene %3 valores "
 "numéricos diferentes"
+
+msgctxt "PrefsAdvanced|"
+msgid "Developer mode"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Development module"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Enable direct libpath mode"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid ""
+"Load modules from a binary in an R-library instead of installing it from "
+"sources."
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Source folder:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Libpath:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Choose the R library where you installed the development module"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Module name:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Enter the (package)name of the development module you want to load"
+msgstr ""
+
+msgctxt "ModulesMenu|"
+msgid "Select a developer module by filling in the relevant preferences"
+msgstr ""
+
+msgctxt "ModulesMenu|"
+msgid "Refresh developer module "
+msgstr ""

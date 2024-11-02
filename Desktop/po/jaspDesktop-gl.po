@@ -636,14 +636,6 @@ msgid "Max logfiles to keep: "
 msgstr "Máximo de ficheiros de inicio a conservar: "
 
 msgctxt "PrefsAdvanced|"
-msgid "Select developer folder"
-msgstr "Escoller o cartafol de desenvolvedor"
-
-msgctxt "PrefsAdvanced|"
-msgid "Developer mode (Beta version)"
-msgstr "Modo de desenvolvedor (versión Beta)"
-
-msgctxt "PrefsAdvanced|"
 msgid "Show logs"
 msgstr "Amosar rexistros de inicio"
 
@@ -5551,3 +5543,49 @@ msgid ""
 msgstr ""
 "O número máximo de valores numéricos é %1. A variable %2 ten %3 valores "
 "numéricos diferentes"
+
+msgctxt "PrefsAdvanced|"
+msgid "Developer mode"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Development module"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Enable direct libpath mode"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid ""
+"Load modules from a binary in an R-library instead of installing it from "
+"sources."
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Source folder:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Libpath:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Choose the R library where you installed the development module"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Module name:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Enter the (package)name of the development module you want to load"
+msgstr ""
+
+msgctxt "ModulesMenu|"
+msgid "Select a developer module by filling in the relevant preferences"
+msgstr ""
+
+msgctxt "ModulesMenu|"
+msgid "Refresh developer module "
+msgstr ""

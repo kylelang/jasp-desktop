@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-27 07:00+0000\n"
-"Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
-"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
-"projects/jasp/jaspdesktop/zh_Hant/>\n"
-"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
 "X-Language: zh_Hant\n"
 "X-Qt-Contexts: true\n"
 
@@ -610,16 +604,8 @@ msgstr ""
 "選擇此設定，JASP將記得之前所啟用的模組"
 
 msgctxt "PrefsAdvanced|"
-msgid "Developer mode (Beta version)"
-msgstr "開發人員選項模式(測試版)"
-
-msgctxt "PrefsAdvanced|"
 msgid "To use JASP Modules enable this option."
 msgstr "開啟此選項以使用JASP模組"
-
-msgctxt "PrefsAdvanced|"
-msgid "Select developer folder"
-msgstr "選擇開發人員檔案夾"
 
 msgctxt "PrefsAdvanced|"
 msgid "Browse to your JASP Module folder."
@@ -5257,4 +5243,50 @@ msgctxt "JASPListControl|"
 msgid ""
 "Maximum number of numeric values is %1. Variable %2 has %3 different numeric "
 "values"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Developer mode"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Development module"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Enable direct libpath mode"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid ""
+"Load modules from a binary in an R-library instead of installing it from "
+"sources."
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Source folder:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Libpath:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Choose the R library where you installed the development module"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Module name:"
+msgstr ""
+
+msgctxt "PrefsAdvanced|"
+msgid "Enter the (package)name of the development module you want to load"
+msgstr ""
+
+msgctxt "ModulesMenu|"
+msgid "Select a developer module by filling in the relevant preferences"
+msgstr ""
+
+msgctxt "ModulesMenu|"
+msgid "Refresh developer module "
 msgstr ""
