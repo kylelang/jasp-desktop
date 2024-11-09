@@ -5041,11 +5041,6 @@ msgctxt "JASPColumn|"
 msgid "Transformed to"
 msgstr ""
 
-#, qt-format
-msgctxt "Modules::ChangeIncompatible|"
-msgid "Reset analysis because of '%1'"
-msgstr ""
-
 msgctxt "TextInputBase|"
 msgid "Column-name-is-free field"
 msgstr ""

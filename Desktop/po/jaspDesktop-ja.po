@@ -5399,11 +5399,6 @@ msgstr ""
 "perhapsAnotherFilter'.\n"
 "右下の(i)アイコンをクリックすると, さらなるヘルプが表示されます.\n"
 
-#, qt-format
-msgctxt "Modules::ChangeIncompatible|"
-msgid "Reset analysis because of '%1'"
-msgstr ""
-
 msgctxt "TextInputBase|"
 msgid "Column-name-is-free field"
 msgstr ""
