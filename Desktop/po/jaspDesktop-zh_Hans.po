@@ -5364,3 +5364,7 @@ msgstr "通过设置相关偏好来选择开发者模块"
 msgctxt "ModulesMenu|"
 msgid "Refresh developer module "
 msgstr "刷新开发者模块 "
+
+msgctxt "ExcelImporter|"
+msgid "0 valid columns were read from the file, please check your data file."
+msgstr ""

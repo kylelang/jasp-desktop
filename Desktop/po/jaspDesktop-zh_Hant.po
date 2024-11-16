@@ -5285,3 +5285,7 @@ msgstr ""
 msgctxt "ModulesMenu|"
 msgid "Refresh developer module "
 msgstr ""
+
+msgctxt "ExcelImporter|"
+msgid "0 valid columns were read from the file, please check your data file."
+msgstr ""
