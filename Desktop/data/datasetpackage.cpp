@@ -1623,7 +1623,7 @@ stringvec DataSetPackage::getColumnDataStrs(size_t columnIndex)
 	return out;
 }
 
-void DataSetPackage::setColumnName(size_t columnIndex, const std::string & newName, bool resetModel)
+void DataSetPackage::setColumnName(size_t columnIndex, const std::string & newName)
 {
 	if(!_dataSet)
 		return;
@@ -1634,16 +1634,12 @@ void DataSetPackage::setColumnName(size_t columnIndex, const std::string & newNa
 
 	std::string oldName = getColumnName(columnIndex);
 
-	if(resetModel)
-		beginResetModel();
-
-	column->setName(newName);
-
-	if(resetModel)
-		endResetModel();
-
-	setManualEdits(true);
-	emit datasetChanged({}, {}, QMap<QString, QString>({{tq(oldName), tq(newName)}}), false, false);
+	if(column->setName(newName))
+	{
+		setManualEdits(true);
+		emit datasetChanged({}, {}, QMap<QString, QString>({{tq(oldName), tq(newName)}}), false, false);
+	}
+	refresh(); //We do refresh in any case because then the emptied name of the column in variableswindow will get filled again
 }
 
 void DataSetPackage::setColumnTitle(size_t columnIndex, const std::string & newTitle)
