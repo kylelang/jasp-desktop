@@ -2372,20 +2372,28 @@ stringvec Column::previewTransform(columnType transformType)
 	}
 	
 	{
-		std::stringstream someEmptyValues;
+		std::stringstream someImplicitEmptyValues;
 		
 		if(transformType == columnType::scale && labelsTempCount() > _labelsTempNumerics)
 		{
 			int count = 0;
 			
 			for(Label * label : _labels)
-				if(!label->isEmptyValue() && count < showThisMany)
-					someEmptyValues << (count++ > 0 ? ", " : "") << '"' << label->originalValueAsString() << '"';
-				else if(!label->isEmptyValue() && count++ == showThisMany)
-					someEmptyValues << ", ...";
+				if(!label->isEmptyValue() && !ColumnUtils::isDoubleValue(label->originalValueAsString()))
+				{
+					if(count < showThisMany)
+						someImplicitEmptyValues << (count > 0 ? ", " : "") << '"' << label->originalValueAsString() << '"';
+					else
+					{
+						someImplicitEmptyValues << ", ...";
+						break; // Do not need to loop further over the labels.
+					}
+
+					count++;
+				}	
 		}
 		
-		out.push_back(someEmptyValues.str());
+		out.push_back(someImplicitEmptyValues.str());
 	}
 	
 	return out;
