@@ -53,7 +53,8 @@ void DatabaseInterface::upgradeDBFromVersion(Version originalVersion)
 	transactionWriteEnd();
 }
 
-DatabaseInterface::DatabaseInterface(bool createDb)
+DatabaseInterface::DatabaseInterface(bool createDb, bool inMemory)
+	: _inMemory{inMemory}
 {
 	assert(!_singleton);
 	_singleton = this;
@@ -1357,7 +1358,13 @@ std::string DatabaseInterface::dbFile(bool onlyName) const
 {
 	JASPTIMER_SCOPE(DatabaseInterface::dbFile);
 
-	return onlyName ? "internal.sqlite" : Utils::osPath(TempFiles::sessionDirName() + "/internal.sqlite").string();
+	static std::string fileName = "internal.sqlite";
+	static std::string memoryName = ":memory:";
+
+	if (_inMemory)
+		return memoryName;
+
+	return onlyName ? fileName : Utils::osPath(TempFiles::sessionDirName() + "/" + fileName).string();
 }
 
 void DatabaseInterface::runQuery(const std::string & query, std::function<void(sqlite3_stmt *stmt)> bindParameters, std::function<void(size_t row, sqlite3_stmt *stmt)> processRow)
@@ -1608,7 +1615,7 @@ void DatabaseInterface::create()
 	JASPTIMER_SCOPE(DatabaseInterface::create);
 	assert(!_db);
 
-	if(std::filesystem::exists(dbFile()))
+	if(!_inMemory && std::filesystem::exists(dbFile()))
 	{
 		Log::log() << "DatabaseInterface::create: Removing existing sqlite internal db at " << dbFile() << std::endl;
 		std::filesystem::remove(dbFile());
