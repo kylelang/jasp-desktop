@@ -65,7 +65,7 @@ def build_cellar(renv_cache, inner_extension):
     output_dir = Path('.') / 'cellar'
     output_dir.mkdir(exist_ok=True)
     
-    pkgs = list(renv_cache.glob('*/*/*/*'))
+    pkgs = [x for x in list(renv_cache.glob('*/*/*/*')) if 'jasp' not in x.stem or 'jaspTools' in x.stem] 
     pkgsOutPaths = [output_dir / generatePkgArchiveName(x, inner_extension) for x in pkgs]        
     with concurrent.futures.ProcessPoolExecutor(max_workers=4) as executor:
         executor.map(create_archive, zip(pkgs, pkgsOutPaths), chunksize=50)
